@@ -67,9 +67,9 @@ copies only move when that number changes — so **bump `version` in both
 materially (a new Kobweb baseline, say). `claude plugin tag` creates a matching git tag
 and checks that the two manifests agree.
 
-> While this repository is private, installation uses your existing git credentials. Run
-> `gh auth setup-git` (or use an SSH remote) so background auto-updates can authenticate
-> too — credential helpers are not used for those by default.
+No authentication is needed — the repository is public. (If you fork it private, note
+that interactive installs use your git credentials, but background auto-updates do not
+use credential helpers by default; `gh auth setup-git` or an SSH remote fixes that.)
 
 ### As a plain folder
 
