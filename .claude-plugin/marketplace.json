@@ -1,0 +1,24 @@
+{
+  "$schema": "https://schema.claude.com/marketplace.json",
+  "name": "kobweb-skill",
+  "description": "Agent Skills for Kobweb, the Kotlin web framework built on Compose HTML.",
+  "version": "1.0.0",
+  "owner": {
+    "name": "macsystems",
+    "url": "https://github.com/macsystems"
+  },
+  "plugins": [
+    {
+      "name": "kobweb",
+      "displayName": "Kobweb",
+      "source": "./",
+      "description": "Expert knowledge of Kobweb: pages, layouts, Silk styling, full-stack API routes and streams, workers, markdown, export, and the current capability/roadmap matrix.",
+      "version": "1.0.0",
+      "author": { "name": "macsystems", "url": "https://github.com/macsystems" },
+      "repository": "https://github.com/macsystems/kobweb-skill",
+      "license": "Apache-2.0",
+      "category": "development",
+      "keywords": ["kobweb", "kotlin", "compose-html", "web", "frontend", "silk", "ktor"]
+    }
+  ]
+}

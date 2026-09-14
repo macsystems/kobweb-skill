@@ -43,9 +43,35 @@ anything version-specific.
 
 ## Installation
 
-Skills are plain folders. Pick whichever scope fits.
+### As a plugin (recommended)
 
-### For your user account (available in every project)
+This repo is also a Claude Code **plugin marketplace**, so it can be installed and kept
+up to date with two commands:
+
+```shell
+/plugin marketplace add macsystems/kobweb-skill
+/plugin install kobweb@kobweb-skill
+```
+
+CLI equivalents:
+
+```bash
+claude plugin marketplace add macsystems/kobweb-skill
+claude plugin install kobweb@kobweb-skill
+```
+
+`/plugin marketplace update kobweb-skill` pulls later changes.
+
+> While this repository is private, installation uses your existing git credentials. Run
+> `gh auth setup-git` (or use an SSH remote) so background auto-updates can authenticate
+> too — credential helpers are not used for those by default.
+
+### As a plain folder
+
+Skills are just directories; copy or symlink one if you would rather not use the plugin
+system.
+
+#### For your user account (available in every project)
 
 ```bash
 mkdir -p ~/.claude/skills
@@ -58,7 +84,7 @@ Or symlink it so `git pull` keeps it current:
 ln -s /path/to/kobweb-skill/skills/kobweb ~/.claude/skills/kobweb
 ```
 
-### Per project (shared with the team)
+#### Per project (shared with the team)
 
 ```bash
 # from the root of your project
@@ -68,7 +94,7 @@ cp -r /path/to/kobweb-skill/skills/kobweb .claude/skills/
 
 Commit `.claude/skills/` to share it with everyone on the repo.
 
-### Other agents
+#### Other agents
 
 Some tools look in `.gemini/skills/` or an equivalent path. The folder is
 tool-agnostic — symlink it wherever your agent expects skills to live.
