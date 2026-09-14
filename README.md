@@ -60,7 +60,12 @@ claude plugin marketplace add macsystems/kobweb-skill
 claude plugin install kobweb@kobweb-skill
 ```
 
-`/plugin marketplace update kobweb-skill` pulls later changes.
+`/plugin marketplace update kobweb-skill` refreshes the catalog; `/plugin update kobweb`
+then applies a new release. Because the plugin declares an explicit `version`, installed
+copies only move when that number changes — so **bump `version` in both
+`.claude-plugin/plugin.json` and the marketplace entry** whenever the content changes
+materially (a new Kobweb baseline, say). `claude plugin tag` creates a matching git tag
+and checks that the two manifests agree.
 
 > While this repository is private, installation uses your existing git credentials. Run
 > `gh auth setup-git` (or use an SSH remote) so background auto-updates can authenticate
